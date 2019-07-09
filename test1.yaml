@@ -1,0 +1,19 @@
+---
+- name: create the file with content
+  hosts: localhost
+  tasks:
+   - name: file with content
+     copy:
+      content: 
+        hellooo world
+      dest: /var/tmp/test1
+   - name: file append
+     blockinfile:
+      state: present
+      inserafter: EOF
+      dest: /var/tmp/test1
+     content: |
+         hiiii
+         helloo
+         task
+
