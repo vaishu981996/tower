@@ -1,0 +1,9 @@
+---
+- name: create the new file
+  hosts: localhost
+  tasks:
+   - name: create the empty file
+     file:
+      path: /var/tmp/testfile
+      state: touch
+      
